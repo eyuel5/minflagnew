@@ -2,7 +2,8 @@
 const flags = [
     { name: "Algeria", imageUrl: "Algeria_flag.png" },
     { name: "Ethiopia", imageUrl: "Ethiopia_flag.png" },
-    { name: "Congo", imageUrl: "Congo_flag.png" }
+    { name: "Congo", imageUrl: "Congo_flag.png" },
+    { name: "Kenya", imageUrl: "Kenya_flag.png" }
     
 ];
 

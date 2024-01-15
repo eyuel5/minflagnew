@@ -9,34 +9,60 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    /* height: 100vh; */
     margin: 0;
     border: 2px solid peru;
 }
 
-#game-container {
-    text-align: center;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 60%;
     max-width: 1050px;
+    height: 100vh;
     border: 2px solid rgb(205, 108, 63);
 }
 
+#game-container {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    border: 2px solid red;
+}
+
+img {
+    max-width: 100%;
+}
+
 #flag-image {
-    width: 40%;
-    min-width: 250px;
+    width: 100%;
+    
     /* max-height: 300px; */
-    margin-bottom: 20px;
+    margin-bottom: 3em;
 }
 
 #options-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px; /* Adjust the gap between buttons as needed */
 }
 
 .option-button {
-    margin: 5px;
-    padding: 10px;
+    /* width: 8rem;
+    height: 4rem;
+     */
+    width: 100%; /* Each button takes 100% width of its grid cell */
+    height: 100px; /* Set the height as needed */
+    background-color: aquamarine;
+    color: #fff; /* Set text color */
     font-size: 16px;
     cursor: pointer;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.option-button:hover {
+    background-color: rgb(107, 192, 164); /* Set hover background color */
 }
