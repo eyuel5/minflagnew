@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
@@ -5,15 +11,20 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    border: 2px solid peru;
 }
 
 #game-container {
     text-align: center;
+    width: 60%;
+    max-width: 1050px;
+    border: 2px solid rgb(205, 108, 63);
 }
 
 #flag-image {
-    max-width: 100%;
-    max-height: 300px;
+    width: 40%;
+    min-width: 250px;
+    /* max-height: 300px; */
     margin-bottom: 20px;
 }
 
