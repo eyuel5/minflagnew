@@ -1,0 +1,31 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#game-container {
+    text-align: center;
+}
+
+#flag-image {
+    max-width: 100%;
+    max-height: 300px;
+    margin-bottom: 20px;
+}
+
+#options-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.option-button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
