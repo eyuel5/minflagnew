@@ -12,7 +12,7 @@ body {
     align-items: center;
     /* height: 100vh; */
     margin: 0;
-    border: 2px solid peru;
+    /* border: 2px solid peru; */
 }
 
 .container {
@@ -22,14 +22,14 @@ body {
     width: 50%;
     max-width: 1050px;
     height: 100vh;
-    border: 2px solid rgb(205, 108, 63);
+    /* border: 2px solid rgb(205, 108, 63); */
 }
 
 #game-container {
     width: 100%;
     max-width: 300px;
     text-align: center;
-    border: 2px solid peru;
+    /* border: 2px solid peru; */
 }
 
 img {
@@ -38,8 +38,7 @@ img {
 
 #flag-image {
     width: 100%;
-    
-    /* max-height: 300px; */
+    max-height: 200px;
     margin-bottom: 3em;
 }
 
@@ -50,21 +49,25 @@ img {
 }
 
 .option-button {
-    /* width: 8rem;
-    height: 4rem;
-     */
     width: 100%; /* Each button takes 100% width of its grid cell */
     height: 100px; /* Set the height as needed */
     background-color: rgba(0, 0, 0, 0.226);
     border: 2px solid #333;
-    border-radius: 10%;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     color: #fff; /* Set text color */
     font-size: 16px;
     cursor: pointer;
     outline: none;
-    transition: background-color 0.3s ease;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .option-button:hover {
-    background-color: rgba(0, 0, 0, 0.514); /* Set hover background color */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adjust values as needed */
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust the alpha value as needed */
+}
+
+#bottomOutPut {
+    margin-top: 1em;
+    color: #fff;
 }

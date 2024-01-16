@@ -102,7 +102,7 @@ function checkAnswer(button) {
     // Check if the selected country matches the correct answer
     if (selectedCountry === flags[currentFlagIndex].name) {
         // Correct Answer: Change button color to green for 1 second
-        button.style.backgroundColor = '#4CAF50'; // Green color
+        button.style.backgroundColor = '#1d9e49'; // Green color
         setTimeout(() => {
             button.style.backgroundColor = ''; // Reset to default
             // Start a new game
@@ -110,7 +110,7 @@ function checkAnswer(button) {
         }, 1000); // 1 second delay
     } else {
         // Wrong Answer: Change button color to red for 1 second
-        button.style.backgroundColor = '#FF5733'; // Red color
+        button.style.backgroundColor = '#ce1226'; // Red color
         setTimeout(() => {
             button.style.backgroundColor = ''; // Reset to default
             // Start a new game
