@@ -5,6 +5,7 @@
 }
 
 body {
+    background-color: #1d1b26; /*#1E1C1C*/
     font-family: 'Arial', sans-serif;
     display: flex;
     justify-content: center;
@@ -18,7 +19,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 50%;
     max-width: 1050px;
     height: 100vh;
     border: 2px solid rgb(205, 108, 63);
@@ -28,7 +29,7 @@ body {
     width: 100%;
     max-width: 300px;
     text-align: center;
-    border: 2px solid red;
+    border: 2px solid peru;
 }
 
 img {
@@ -54,15 +55,16 @@ img {
      */
     width: 100%; /* Each button takes 100% width of its grid cell */
     height: 100px; /* Set the height as needed */
-    background-color: aquamarine;
+    background-color: rgba(0, 0, 0, 0.226);
+    border: 2px solid #333;
+    border-radius: 10%;
     color: #fff; /* Set text color */
     font-size: 16px;
     cursor: pointer;
-    border: none;
     outline: none;
     transition: background-color 0.3s ease;
 }
 
 .option-button:hover {
-    background-color: rgb(107, 192, 164); /* Set hover background color */
+    background-color: rgba(0, 0, 0, 0.514); /* Set hover background color */
 }
