@@ -61,6 +61,7 @@ let currentFlagIndex;
 let usedFlags = [];
 
 function startGame() {
+    timeCounter()
     // Check if all flags have been used
     if (usedFlags.length === flags.length) {
         // Reset usedFlags array when all flags have been displayed
@@ -134,5 +135,22 @@ function shuffle(array) {
     return array;
 }
 
+//time counter function
+function timeCounter() {
+    let timeCount = 240; // Initial time count
+    const timeSpan = document.getElementById("time-count");
+
+    // Function to update time count
+    function updateTimeCount() {
+        timeCount--;
+        timeSpan.textContent = timeCount;
+    }
+
+    // Set interval to update time count every second (1000 milliseconds)
+    setInterval(updateTimeCount, 1000);
+}
+
 // Start the game when the page loads
 window.onload = startGame;
+
+
