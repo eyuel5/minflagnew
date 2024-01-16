@@ -4,9 +4,13 @@
     box-sizing: border-box;
 }
 
+:root {
+    --font: "Roboto Mono", "Roboto Mono", "Vazirmatn", monospace;
+}
+
 body {
     background-color: #1d1b26; /*#1E1C1C*/
-    font-family: 'Arial', sans-serif;
+    font-family: var(--font);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,22 +21,23 @@ body {
 
 #menu-modal {
     position: absolute;
-    background-color: #555;
+    background-color: rgba(29, 27, 38, 0.97);
     width: 50%;
-    height: 100vh;
+    height: 96vh;
     color: #d1d0c5;
     font-size: 1.5rem;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: var(--font);
     text-align: center;
     display: none;
     justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
 }
 
 #restart-button {
     width: 6rem;
     height: 4rem;
-    background-color: #1d1b26;
-    color: #fff;
+    background-color: #12111a;
+    color: #d1d0c5;
     font-size: 1.25rem;
     font-family: inherit;
     border: none;
@@ -42,8 +47,8 @@ body {
 }
 
 #restart-button:hover {
-    background-color: #12111a;
-    color: #beb6b6;
+    background-color: #d1d0c5;
+    color: #12111a;
 }
 
 .container {
@@ -54,14 +59,18 @@ body {
     width: 50%;
     max-width: 1050px;
     height: 100vh;
-    border: 2px solid rgb(205, 108, 63);
+    /* border: 2px solid rgb(205, 108, 63); */
 }
 
-#game-container {
+#top-title {
     width: 100%;
     max-width: 300px;
+    min-width: 100px;
+    margin-bottom: .75em 0;
+    color: #d1d0c5;
+    font-family: var(--font);
+    font-size: 2rem;
     text-align: center;
-    border: 2px solid peru;
 }
 
 .flag-left-counter, .count-container {
@@ -69,10 +78,9 @@ body {
     max-width: 300px;
     /* min-width: 100px; */
     min-width: 100px;
-    margin-bottom: 1em;
+    margin-bottom: .75em;
     color: #d1d0c5;
-    
-    font-family: 'Courier New', Courier, monospace;
+    font-family: var(--font);
 }
 
 .flag-left-counter {
@@ -84,17 +92,15 @@ body {
     justify-content: space-between;
     align-items: center;
     font-size: 1.5rem;
-    border: 2px solid #555;
+    /* border: 2px solid #555; */
 }
 
-.time-counter {
-    color: inherit;
+#game-container {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    /* border: 2px solid peru; */
 }
-
-.life-counter {
-    color: inherit;
-}
-
 
 img {
     max-width: 100%;
@@ -121,6 +127,7 @@ img {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     color: #fff; /* Set text color */
     font-size: 16px;
+    font-family: var(--font);
     cursor: pointer;
     outline: none;
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
