@@ -20,7 +20,30 @@ body {
     background-color: #555;
     width: 50%;
     height: 100vh;
+    color: #d1d0c5;
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
     display: none;
+    justify-content: center;
+}
+
+#restart-button {
+    width: 6rem;
+    height: 4rem;
+    background-color: #1d1b26;
+    color: #fff;
+    font-size: 1.25rem;
+    font-family: inherit;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#restart-button:hover {
+    background-color: #12111a;
+    color: #beb6b6;
 }
 
 .container {

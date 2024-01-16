@@ -229,7 +229,7 @@ function gameOver() {
     }
 
     // Display the modal
-    menuModal.style.display = "block";
+    menuModal.style.display = "flex";
 
     // Add event listener for restart button
     const restartButton = document.getElementById("restart-button");
