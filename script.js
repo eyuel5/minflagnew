@@ -56,16 +56,18 @@ const flags = [
     { name: "Zimbabwe", imageUrl: "Zimbabwe_Flag.png" }
 ];
 
+let lifeCountNum = 3
 
 let currentFlagIndex;
 let usedFlags = [];
 
 function startGame() {
-    timeCounter()
+    
     // Check if all flags have been used
     if (usedFlags.length === flags.length) {
         // Reset usedFlags array when all flags have been displayed
-        usedFlags = [];
+        // usedFlags = [];
+        gameOver()
     }
 
     // Ensure that the current flag is included in the options
@@ -110,6 +112,8 @@ function checkAnswer(button) {
             startGame();
         }, 1000); // 1 second delay
     } else {
+        lifeCountNum--;
+        lifeCounter()
         // Wrong Answer: Change button color to red for 1 second
         button.style.backgroundColor = '#ce1226'; // Red color
         setTimeout(() => {
@@ -118,6 +122,9 @@ function checkAnswer(button) {
             startGame();
         }, 1000); // 1 second delay
     }
+
+    // Decrement the flag left
+    flagLeftCounter()
 }
 
 
@@ -135,22 +142,106 @@ function shuffle(array) {
     return array;
 }
 
-//time counter function
+let flagLeftCount = 54
+const flgLftCountSpan = document.getElementById("flag-left-count")
+// flag left counter
+function flagLeftCounter() {
+    flagLeftCount--;
+    flgLftCountSpan.textContent = flagLeftCount;
+}
+
+// Declare intervalId globally
+let intervalId;
+let timeCount = 240; // Initial time count
+const timeSpan = document.getElementById("time-count");
+// Time counter function
 function timeCounter() {
-    let timeCount = 240; // Initial time count
-    const timeSpan = document.getElementById("time-count");
 
     // Function to update time count
     function updateTimeCount() {
         timeCount--;
         timeSpan.textContent = timeCount;
+
+        if (timeCount === 0) {
+            clearInterval(intervalId); // Stop the interval when timeCount reaches 0
+            gameOver();
+        }
     }
 
     // Set interval to update time count every second (1000 milliseconds)
-    setInterval(updateTimeCount, 1000);
+    intervalId = setInterval(updateTimeCount, 1000);
 }
+
+let lifeCount = "❤️❤️❤️"
+function lifeCounter() {
+
+    const lifeSpan = document.getElementById("life-count");
+    if (lifeCountNum === 3) {
+        lifeSpan.textContent = "❤️❤️❤️"
+    } else if (lifeCountNum === 2) {
+        lifeSpan.textContent = "❤️❤️"
+    } else if (lifeCountNum === 1) {
+        lifeSpan.textContent = "❤️"
+    } else if (lifeCountNum === 0) {
+        lifeSpan.textContent = ""
+        gameOver();
+    }
+
+}
+
+// Reset function to restart the game
+function resetGame() {
+    // Reset life count and time and flag left
+    lifeCountNum = 3;
+    timeCount = 240;
+    timeSpan.textContent = timeCount;
+    flagLeftCount = 54;
+    flgLftCountSpan.textContent = flagLeftCount;
+    lifeCounter()
+    timeCounter();
+
+    usedFlags = [];
+
+    // Hide the modal
+    const menuModal = document.getElementById("menu-modal");
+    menuModal.style.display = "none";
+
+    // Start a new game
+    startGame();
+}
+
+// Function to handle game over situations
+function gameOver() {
+    // Stop the time counter
+    clearInterval(intervalId);
+
+    // Display the game over modal
+    const menuModal = document.getElementById("menu-modal");
+    const gameOverInfo = document.getElementById("game-over-info");
+
+    // Check the game over condition and set modal content accordingly
+    if (lifeCountNum === 0) {
+        gameOverInfo.textContent = "Game Over! You ran out of lives.";
+    } else if (usedFlags.length === flags.length) {
+        gameOverInfo.textContent = "Congratulations! You completed the game!";
+    } else if (timeCount === 0) {
+        gameOverInfo.textContent = "Time's up! Game Over.";
+    }
+
+    // Display the modal
+    menuModal.style.display = "block";
+
+    // Add event listener for restart button
+    const restartButton = document.getElementById("restart-button");
+    restartButton.addEventListener("click", resetGame);
+}
+
+
 
 // Start the game when the page loads
 window.onload = startGame;
+
+// start the time count
+timeCounter()
 
 

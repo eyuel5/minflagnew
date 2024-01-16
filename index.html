@@ -7,10 +7,17 @@
     <title>MINFLAGNEW</title>
 </head>
 <body>
+    <div id="menu-modal" class="modal">
+        <div class="modal-content">
+            <p id="game-over-info"></p>
+            <button id="restart-button">Restart</button>
+        </div>
+    </div>
     <div class="container">
+        <div class="flag-left-counter">Flag Left Counter: <span id="flag-left-count">54</span></div>
         <div class="count-container">
             <div class="time-counter">Time: <span id="time-count">240</span></div>
-            <div class="life-counter">💚💛❤️</div>
+            <div class="life-counter"><span id="life-count">❤️❤️❤️</span></div>
         </div>
         <div id="game-container">
             <img id="flag-image" src="" alt="Flag Image">
@@ -20,8 +27,8 @@
                 <button class="option-button" onclick="checkAnswer(this)"></button>
                 <button class="option-button" onclick="checkAnswer(this)"></button>
             </div>
-            <div id="bottomOutPut">Bottom out put</div>
         </div>
+        <div id="bottomOutPut">Bottom out put</div>
     </div>
     <script src="script.js"></script>
 </body>
