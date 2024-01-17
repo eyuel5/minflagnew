@@ -67,13 +67,29 @@ body {
     max-width: 300px;
     min-width: 100px;
     margin: .5em 0;
-    color: #d1d0c5;
+    color: #d1d0c4;
     font-family: var(--font);
     font-size: 2rem;
     text-align: center;
 }
 
-.flag-left-counter, .count-container {
+.flagLeftContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flag-left-counter {
+    font-size: 1.3rem;
+}
+
+#setting-icon {
+    display: flex;
+}
+
+
+.flagLeftContainer, .count-container {
     width: 100%;
     max-width: 300px;
     /* min-width: 100px; */
@@ -83,9 +99,6 @@ body {
     font-family: var(--font);
 }
 
-.flag-left-counter {
-    font-size: 1.3rem;
-}
 
 .count-container {
     display: flex;
