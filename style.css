@@ -152,8 +152,8 @@ img {
 /* Media query for screens with a maximum width of 600px (adjust as needed) */
 @media screen and (max-width: 600px) {
     body {
-        justify-content: flex-start; /* Align content to the top */
-        padding: 10px; /* Add some padding to the body */
+        justify-content: flex-start;
+        padding: 10px;
     }
 
     #menu-modal {
@@ -163,31 +163,32 @@ img {
 
     .container {
         width: 100%;
+        max-width: none; /* Remove the max-width for smaller screens */
     }
 
     #top-title {
-        max-width: 100%;
+        max-width: none;
     }
 
     .flag-left-counter,
     .count-container {
-        max-width: 100%;
+        max-width: none;
     }
 
     #game-container {
-        max-width: 100%;
+        max-width: none;
     }
 
     #flag-image {
-        max-height: 150px; /* Adjust the max height for smaller screens */
+        max-height: 150px;
         margin-bottom: 2em;
     }
 
     #options-container {
-        grid-template-columns: 1fr; /* Change to a single column for smaller screens */
+        grid-template-columns: 1fr;
     }
 
     .option-button {
-        height: 80px; /* Adjust the height for smaller screens */
+        height: 80px;
     }
 }
