@@ -62,6 +62,45 @@ let correctCounter = 0;
 let currentFlagIndex;
 let usedFlags = [];
 
+const menuModal = document.getElementById("menu-modal");
+
+const optionFiveBtn = document.getElementById("5th-btn");
+const optionSixBtn = document.getElementById("6th-btn");
+
+let radioFourOption = document.getElementById("fourOption");
+let radioSixOption = document.getElementById("sixOption");
+let sixChoiceRadioChecker = false;
+
+function Initialize() {
+    const StartButton = document.getElementById("menu-start-button");
+
+    // Add event listener for option1
+    radioFourOption.addEventListener("click", function () {
+        optionFiveBtn.style.display = "none"
+        optionSixBtn.style.display = "none"
+        sixChoiceRadioChecker = false;
+    });
+
+    // Add event listener for option2
+    radioSixOption.addEventListener("click", function () {
+        optionFiveBtn.style.display = "block"
+        optionSixBtn.style.display = "block"
+        sixChoiceRadioChecker = true;
+    });
+
+    StartButton.addEventListener("click", hideMenu);
+}
+
+function hideMenu() {
+    menuModal.style.display = "none"
+
+    // Start the game when the page loads
+    startGame()
+
+    // start the time count
+    timeCounter()
+}
+
 function startGame() {
 
     // Check if all flags have been used
@@ -77,8 +116,16 @@ function startGame() {
         options = shuffle([...flags]);
     }
 
-    // only use 4 options...
-    options = options.slice(0, 4)
+    // check if the user choose to play in 4 or 6 buttons
+    if (sixChoiceRadioChecker) {
+        // use 4 options...
+        options = options.slice(0, 6)
+    } else {
+        // only use 4 options...
+        options = options.slice(0, 4)
+    }
+
+
 
     // Display the selected flag image
     currentFlagIndex = flags.indexOf(options[0]);
@@ -210,8 +257,8 @@ function resetGame() {
     usedFlags = [];
 
     // Hide the modal
-    const menuModal = document.getElementById("menu-modal");
-    menuModal.style.display = "none";
+    const gameoverModal = document.getElementById("gameover-modal");
+    gameoverModal.style.display = "none";
 
     // Start a new game
     startGame();
@@ -223,7 +270,7 @@ function gameOver() {
     clearInterval(intervalId);
 
     // Display the game over modal
-    const menuModal = document.getElementById("menu-modal");
+    const gameoverModal = document.getElementById("gameover-modal");
     const gameOverInfo = document.getElementById("game-over-info");
     const correctCountInfo = document.getElementById("game-over-correct-info")
     const correctCountInfoDesc = document.getElementById("game-over-description-info");
@@ -256,7 +303,7 @@ function gameOver() {
 
 
     // Display the modal
-    menuModal.style.display = "flex";
+    gameoverModal.style.display = "flex";
 
     // Add event listener for restart button
     const restartButton = document.getElementById("restart-button");
@@ -264,11 +311,8 @@ function gameOver() {
 }
 
 
+window.onload = Initialize;
 
-// Start the game when the page loads
-window.onload = startGame;
 
-// start the time count
-timeCounter()
 
 
