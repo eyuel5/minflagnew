@@ -67,7 +67,7 @@ function startGame() {
     // Check if all flags have been used
     if (usedFlags.length === flags.length) {
         // Reset usedFlags array when all flags have been displayed
-        // usedFlags = [];
+        usedFlags = [];
         gameOver()
     }
 
@@ -111,6 +111,12 @@ function checkAnswer(button) {
             button.style.backgroundColor = ''; // Reset to default
             // Increment correct count
             correctCounter++;
+
+            // // check if all countries are answered
+            // if (correctCounter === 54) {
+            //     gameOver()
+            // }
+
             // Start a new game
             startGame();
         }, 1000); // 1 second delay
@@ -195,7 +201,6 @@ function lifeCounter() {
 // Reset function to restart the game
 function resetGame() {
     // Reset life count and time and flag left
-    correctCounter = 0
     lifeCountNum = 3;
     timeCount = 240;
     timeSpan.textContent = timeCount;
@@ -203,6 +208,9 @@ function resetGame() {
     flgLftCountSpan.textContent = flagLeftCount;
     lifeCounter()
     timeCounter();
+
+
+    correctCounter = 0
 
     usedFlags = [];
 
@@ -223,11 +231,13 @@ function gameOver() {
     const menuModal = document.getElementById("menu-modal");
     const gameOverInfo = document.getElementById("game-over-info");
     const correctCountInfo = document.getElementById("game-over-correct-info")
+    const correctCountInfoDesc = document.getElementById("game-over-description-info");
 
     // Check the game over condition and set modal content accordingly
     if (lifeCountNum === 0) {
         gameOverInfo.textContent = "Game Over! You ran out of lives.";
-    } else if (usedFlags.length === flags.length) {
+        // I think there is some error on this 
+    } else if (usedFlags.length === flags.length || flagLeftCount == 54) {
         gameOverInfo.textContent = "Congratulations! You completed the game!";
     } else if (timeCount === 0) {
         gameOverInfo.textContent = "Time's up! Game Over.";
@@ -235,9 +245,21 @@ function gameOver() {
 
     correctCountInfo.textContent = `Correct Answer: ${correctCounter}`;
 
-    if (correctCounter >= 10) {
-        
+    // Correct counter description
+    if (correctCounter === 54) {
+        correctCountInfoDesc.textContent = "Now you're a MASTER on this!, Can you try others?";
+    } else if (correctCounter >= 40) {
+        correctCountInfoDesc.textContent = "Great job! You're almost there. Keep it up";
+    } else if (correctCounter >=30) {
+        correctCountInfoDesc.textContent = "You're doing well. Keep it going!";
+    } else if (correctCounter >=20) {
+        correctCountInfoDesc.textContent = "Nice progress. Keep it going!";
+    } else if (correctCounter >=10) {
+        correctCountInfoDesc.textContent = "Keep it going!";
+    } else {
+        correctCountInfoDesc.textContent = "Try again, and you will see your progress.";
     }
+    
 
     // Display the modal
     menuModal.style.display = "flex";
