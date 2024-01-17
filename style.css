@@ -9,7 +9,8 @@
 }
 
 body {
-    background-color: #1d1b26; /*#1E1C1C*/
+    background-color: #1d1b26;
+    /*#1E1C1C*/
     font-family: var(--font);
     display: flex;
     justify-content: center;
@@ -59,7 +60,6 @@ body {
     width: 80%;
     max-width: 1050px;
     height: 100vh;
-    /* border: 2px solid rgb(205, 108, 63); */
 }
 
 #top-title {
@@ -78,6 +78,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin: .75em 0;
 }
 
 .flag-left-counter {
@@ -89,7 +90,8 @@ body {
 }
 
 
-.flagLeftContainer, .count-container {
+.flagLeftContainer,
+.count-container {
     width: 100%;
     max-width: 300px;
     /* min-width: 100px; */
@@ -128,17 +130,21 @@ img {
 #options-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px; /* Adjust the gap between buttons as needed */
+    gap: 10px;
+    /* Adjust the gap between buttons as needed */
 }
 
 .option-button {
-    width: 100%; /* Each button takes 100% width of its grid cell */
-    height: 100px; /* Set the height as needed */
+    width: 100%;
+    /* Each button takes 100% width of its grid cell */
+    height: 100px;
+    /* Set the height as needed */
     background-color: rgba(0, 0, 0, 0.226);
     border: 2px solid #333;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    color: #fff; /* Set text color */
+    color: #fff;
+    /* Set text color */
     font-size: 16px;
     font-family: var(--font);
     cursor: pointer;
@@ -147,8 +153,10 @@ img {
 }
 
 .option-button:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adjust values as needed */
-    background-color: rgba(0, 0, 0, 0.6); /* Adjust the alpha value as needed */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Adjust values as needed */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Adjust the alpha value as needed */
     border-radius: 10px;
 }
 
@@ -184,9 +192,10 @@ img {
     }
 
     .flag-left-counter,
+    .flagLeftContainer,
     .count-container {
         max-width: none;
-        font-size: 1rem; 
+        font-size: 1rem;
     }
 
     #game-container {
@@ -194,12 +203,13 @@ img {
     }
 
     #flag-image {
-        max-height: 150px;
+        max-height: 15rem;
         margin-bottom: 2em;
     }
 
     #options-container {
-        grid-template-columns: repeat(2, 1fr); /* Adjust the number of columns as needed */
+        grid-template-columns: repeat(2, 1fr);
+        /* Adjust the number of columns as needed */
     }
 
     .option-button {
