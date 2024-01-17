@@ -122,7 +122,7 @@ img {
 }
 
 #flag-image {
-    width: 100%;
+    /* width: 100%; */
     max-height: 200px;
     margin-bottom: 3em;
 }
@@ -203,7 +203,7 @@ img {
     }
 
     #flag-image {
-        max-height: 15rem;
+        max-height: 13rem;
         margin-bottom: 2em;
     }
 
