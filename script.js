@@ -229,7 +229,7 @@ function gameOver() {
     const correctCountInfoDesc = document.getElementById("game-over-description-info");
 
     // Check the game over condition and set modal content accordingly
-    if (usedFlags.length === flags.length || flagLeftCount == 54) {
+    if (usedFlags.length === flags.length || flagLeftCount == 0) {
         gameOverInfo.textContent = "Congratulations! You completed the game!";
     } else if (timeCount === 0) {
         gameOverInfo.textContent = "Time's up! Game Over.";

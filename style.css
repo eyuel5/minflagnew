@@ -88,6 +88,12 @@ body {
     display: flex;
 }
 
+/* Add this part for responsive sizing of the SVG icon */
+#setting-icon svg {
+    height: 20px; /* Default size for desktop */
+    width: 20px;  /* Default size for desktop */
+}
+
 
 .flagLeftContainer,
 .count-container {
@@ -188,6 +194,11 @@ img {
 
     #top-title {
         max-width: none;
+    }
+
+    #setting-icon svg {
+        height: 18px;
+        width: 18px;
     }
 
     .flag-left-counter,
