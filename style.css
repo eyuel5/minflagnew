@@ -173,6 +173,7 @@ img {
     .flag-left-counter,
     .count-container {
         max-width: none;
+        font-size: 1rem; 
     }
 
     #game-container {
