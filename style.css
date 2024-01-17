@@ -163,7 +163,7 @@ img {
 
     .container {
         width: 100%;
-        max-width: none; /* Remove the max-width for smaller screens */
+        max-width: none;
     }
 
     #top-title {
@@ -185,7 +185,7 @@ img {
     }
 
     #options-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr); /* Adjust the number of columns as needed */
     }
 
     .option-button {
