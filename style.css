@@ -136,6 +136,7 @@ img {
 .option-button:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adjust values as needed */
     background-color: rgba(0, 0, 0, 0.6); /* Adjust the alpha value as needed */
+    border-radius: 10px;
 }
 
 

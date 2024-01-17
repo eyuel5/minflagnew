@@ -56,13 +56,14 @@ const flags = [
     { name: "Zimbabwe", imageUrl: "Zimbabwe_Flag.png" }
 ];
 
-let lifeCountNum = 3
+let lifeCountNum = 3;
+let correctCounter = 0;
 
 let currentFlagIndex;
 let usedFlags = [];
 
 function startGame() {
-    
+
     // Check if all flags have been used
     if (usedFlags.length === flags.length) {
         // Reset usedFlags array when all flags have been displayed
@@ -108,6 +109,8 @@ function checkAnswer(button) {
         button.style.backgroundColor = '#1d9e49'; // Green color
         setTimeout(() => {
             button.style.backgroundColor = ''; // Reset to default
+            // Increment correct count
+            correctCounter++;
             // Start a new game
             startGame();
         }, 1000); // 1 second delay
@@ -192,6 +195,7 @@ function lifeCounter() {
 // Reset function to restart the game
 function resetGame() {
     // Reset life count and time and flag left
+    correctCounter = 0
     lifeCountNum = 3;
     timeCount = 240;
     timeSpan.textContent = timeCount;
@@ -218,6 +222,7 @@ function gameOver() {
     // Display the game over modal
     const menuModal = document.getElementById("menu-modal");
     const gameOverInfo = document.getElementById("game-over-info");
+    const correctCountInfo = document.getElementById("game-over-correct-info")
 
     // Check the game over condition and set modal content accordingly
     if (lifeCountNum === 0) {
@@ -226,6 +231,12 @@ function gameOver() {
         gameOverInfo.textContent = "Congratulations! You completed the game!";
     } else if (timeCount === 0) {
         gameOverInfo.textContent = "Time's up! Game Over.";
+    }
+
+    correctCountInfo.textContent = `Correct Answer: ${correctCounter}`;
+
+    if (correctCounter >= 10) {
+        
     }
 
     // Display the modal
