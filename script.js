@@ -112,11 +112,6 @@ function checkAnswer(button) {
             // Increment correct count
             correctCounter++;
 
-            // // check if all countries are answered
-            // if (correctCounter === 54) {
-            //     gameOver()
-            // }
-
             // Start a new game
             startGame();
         }, 1000); // 1 second delay
