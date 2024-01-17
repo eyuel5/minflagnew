@@ -229,13 +229,12 @@ function gameOver() {
     const correctCountInfoDesc = document.getElementById("game-over-description-info");
 
     // Check the game over condition and set modal content accordingly
-    if (lifeCountNum === 0) {
-        gameOverInfo.textContent = "Game Over! You ran out of lives.";
-        // I think there is some error on this 
-    } else if (usedFlags.length === flags.length || flagLeftCount == 54) {
+    if (usedFlags.length === flags.length || flagLeftCount == 54) {
         gameOverInfo.textContent = "Congratulations! You completed the game!";
     } else if (timeCount === 0) {
         gameOverInfo.textContent = "Time's up! Game Over.";
+    } else if (lifeCountNum === 0) {
+        gameOverInfo.textContent = "Game Over! You ran out of lives.";
     }
 
     correctCountInfo.textContent = `Correct Answer: ${correctCounter}`;
@@ -245,16 +244,16 @@ function gameOver() {
         correctCountInfoDesc.textContent = "Now you're a MASTER on this!, Can you try others?";
     } else if (correctCounter >= 40) {
         correctCountInfoDesc.textContent = "Great job! You're almost there. Keep it up";
-    } else if (correctCounter >=30) {
+    } else if (correctCounter >= 30) {
         correctCountInfoDesc.textContent = "You're doing well. Keep it going!";
-    } else if (correctCounter >=20) {
+    } else if (correctCounter >= 20) {
         correctCountInfoDesc.textContent = "Nice progress. Keep it going!";
-    } else if (correctCounter >=10) {
+    } else if (correctCounter >= 10) {
         correctCountInfoDesc.textContent = "Keep it going!";
     } else {
         correctCountInfoDesc.textContent = "Try again, and you will see your progress.";
     }
-    
+
 
     // Display the modal
     menuModal.style.display = "flex";

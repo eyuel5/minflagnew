@@ -26,12 +26,11 @@ body {
     width: 80%;
     height: 96vh;
     color: #d1d0c5;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-family: var(--font);
     text-align: center;
     display: none;
     justify-content: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
 }
 
 #restart-button {
