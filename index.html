@@ -14,18 +14,33 @@
 
 <body>
     <div id="menu-modal" class="modal">
+        <div class="menu-modal-content">
+            <h1 id="menu-head">---MINFLAGNEW---</h1>
+            <h2>Game Settings</h2>
+            <form id="settings-form">
+                <h3>Choose Number of Choices</h3>
+                <label for="fourOption">4 Buttons</label>
+                <input type="radio" id="fourOption" name="options" value="option4">
+
+                <label for="sixOption">6 Buttons</label>
+                <input type="radio" id="sixOption" name="options" value="option6">
+            </form>
+            <button class="strt-btn" id="menu-start-button">Start</button>
+        </div>
+    </div>
+    <div id="gameover-modal" class="modal">
         <div class="modal-content">
             <p id="game-over-info"></p>
             <p id="game-over-correct-info"></p>
             <p id="game-over-description-info"></p>
-            <button id="restart-button">Restart</button>
+            <button class="strt-btn" id="restart-button">Restart</button>
         </div>
     </div>
     <div class="container">
         <!-- <div id="top-title"><h1>ምንFLAGነው?</h1></div> -->
         <div class="flagLeftContainer">
             <div class="flag-left-counter">Flag Left: <span id="flag-left-count">54</span></div>
-            <div id="setting-icon">
+            <div id="menu-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16"
                     viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                     <path fill="#d1d0c4"
@@ -44,6 +59,8 @@
                 <button class="option-button" onclick="checkAnswer(this)"></button>
                 <button class="option-button" onclick="checkAnswer(this)"></button>
                 <button class="option-button" onclick="checkAnswer(this)"></button>
+                <button id="5th-btn" class="option-button" onclick="checkAnswer(this)"></button>
+                <button id="6th-btn" class="option-button" onclick="checkAnswer(this)"></button>
             </div>
         </div>
     </div>

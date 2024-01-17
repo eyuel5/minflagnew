@@ -20,7 +20,7 @@ body {
     /* border: 2px solid peru; */
 }
 
-#menu-modal {
+.modal {
     position: absolute;
     background-color: rgba(29, 27, 38, 0.97);
     width: 80%;
@@ -29,14 +29,35 @@ body {
     font-size: 1.25rem;
     font-family: var(--font);
     text-align: center;
-    display: none;
+}
+
+#menu-modal {
+    background-color: rgba(29, 27, 38, 0.719);
+    display: flex;
     justify-content: center;
 }
 
-#restart-button {
+#menu-head {
+    font-size: 2rem;
+}
+
+.menu-modal-content {
+    font-size: 1rem;
+}
+.menu-modal-content h2 {
+    font-size: 1.25rem;
+}
+
+#menu-start-button:hover {
+    background-color: #d1d0c5;
+    color: #12111a;
+}
+
+.strt-btn {
     width: 6rem;
     height: 4rem;
     background-color: #12111a;
+    margin: 3em 0;  /* modified */
     color: #d1d0c5;
     font-size: 1.25rem;
     font-family: inherit;
@@ -44,6 +65,11 @@ body {
     border-radius: 10px;
     cursor: pointer;
     transition: 0.3s ease;
+}
+
+#gameover-modal {
+    display: none;
+    justify-content: center;
 }
 
 #restart-button:hover {
@@ -84,12 +110,12 @@ body {
     font-size: 1.3rem;
 }
 
-#setting-icon {
+#menu-icon {
     display: flex;
 }
 
 /* Add this part for responsive sizing of the SVG icon */
-#setting-icon svg {
+#menu-icon svg {
     height: 20px; /* Default size for desktop */
     width: 20px;  /* Default size for desktop */
 }
@@ -159,9 +185,7 @@ img {
 
 .option-button:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    /* Adjust values as needed */
     background-color: rgba(0, 0, 0, 0.6);
-    /* Adjust the alpha value as needed */
     border-radius: 10px;
 }
 
@@ -173,13 +197,10 @@ img {
 
 /* added to make resopnsive*/
 
-/* Add this at the end of your existing CSS */
-
-/* Media query for screens with a maximum width of 600px (adjust as needed) */
+/* Media query for screens with a maximum width of 600px */
 @media screen and (max-width: 600px) {
     body {
         justify-content: flex-start;
-        padding: 10px;
     }
 
     #menu-modal {
@@ -187,8 +208,18 @@ img {
         height: 100%;
     }
 
+    #menu-head {
+        font-size: 1.5rem;
+    }
+
+    #gameover-modal {
+        width: 100%;
+        height: 100%;
+    }
+
     .container {
         width: 100%;
+        padding: 10px;
         max-width: none;
     }
 
@@ -196,7 +227,7 @@ img {
         max-width: none;
     }
 
-    #setting-icon svg {
+    #menu-icon svg {
         height: 18px;
         width: 18px;
     }
