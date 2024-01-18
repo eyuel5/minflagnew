@@ -69,23 +69,25 @@ const optionSixBtn = document.getElementById("6th-btn");
 
 let radioFourOption = document.getElementById("fourOption");
 let radioSixOption = document.getElementById("sixOption");
-// let sixChoiceRadioChecker = false;
 
 function Initialize() {
     const StartButton = document.getElementById("menu-start-button");
+
+    if (radioFourOption.checked) {
+        optionFiveBtn.style.display = "none"
+        optionSixBtn.style.display = "none"
+    }
 
     // Add event listener for option1
     radioFourOption.addEventListener("click", function () {
         optionFiveBtn.style.display = "none"
         optionSixBtn.style.display = "none"
-        // sixChoiceRadioChecker = false;
     });
 
     // Add event listener for option2
     radioSixOption.addEventListener("click", function () {
         optionFiveBtn.style.display = "block"
         optionSixBtn.style.display = "block"
-        // sixChoiceRadioChecker = true;
     });
 
     StartButton.addEventListener("click", hideMenu);
