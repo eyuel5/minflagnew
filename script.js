@@ -69,7 +69,7 @@ const optionSixBtn = document.getElementById("6th-btn");
 
 let radioFourOption = document.getElementById("fourOption");
 let radioSixOption = document.getElementById("sixOption");
-let sixChoiceRadioChecker = false;
+// let sixChoiceRadioChecker = false;
 
 function Initialize() {
     const StartButton = document.getElementById("menu-start-button");
@@ -78,14 +78,14 @@ function Initialize() {
     radioFourOption.addEventListener("click", function () {
         optionFiveBtn.style.display = "none"
         optionSixBtn.style.display = "none"
-        sixChoiceRadioChecker = false;
+        // sixChoiceRadioChecker = false;
     });
 
     // Add event listener for option2
     radioSixOption.addEventListener("click", function () {
         optionFiveBtn.style.display = "block"
         optionSixBtn.style.display = "block"
-        sixChoiceRadioChecker = true;
+        // sixChoiceRadioChecker = true;
     });
 
     StartButton.addEventListener("click", hideMenu);
@@ -94,11 +94,12 @@ function Initialize() {
 function hideMenu() {
     menuModal.style.display = "none"
 
+    // start the time count
+    timeCounter()
+
     // Start the game when the page loads
     startGame()
 
-    // start the time count
-    timeCounter()
 }
 
 function startGame() {
@@ -117,10 +118,11 @@ function startGame() {
     }
 
     // check if the user choose to play in 4 or 6 buttons
-    if (sixChoiceRadioChecker) {
+    if (radioSixOption.checked) {
         // use 4 options...
         options = options.slice(0, 6)
-    } else {
+    }
+    if (radioFourOption.checked){
         // only use 4 options...
         options = options.slice(0, 4)
     }
